@@ -1,0 +1,16 @@
+{% extends "oscar/partials/nav_primary.html" %}
+    {% load i18n %}
+
+    {% block nav_items %}
+    {{ block.super }}
+    <li class="nav-item dropdown">
+      <a class="nav-link" href="#" role="button">
+        {% trans "store" %}
+      </a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link" href="#" role="button">
+        About Us
+      </a>
+    </li>
+    {% endblock %}
