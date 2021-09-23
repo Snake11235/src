@@ -10,3 +10,12 @@ class Store(models.Model):
 
     class Meta:
         app_label = 'Store'
+
+
+class Slider(models.Model):
+    name=models.CharField(max_length=255)
+    photo = models.ImageField()
+    description= models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        app_label = 'Slider'

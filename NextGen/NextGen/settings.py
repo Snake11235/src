@@ -98,7 +98,7 @@ ROOT_URLCONF = 'NextGen.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -199,3 +199,7 @@ DATABASES = {
         'ATOMIC_REQUESTS': True,
     }
 }
+
+OSCAR_REQUIRED_ADDRESS_FIELDS=('first_name', 'last_name', 'line1','phone_number')
+
+OSCAR_SHOP_NAME = 'NextGen'
