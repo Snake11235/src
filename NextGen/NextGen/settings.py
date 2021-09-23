@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 from oscar.defaults import *
 from pathlib import Path
+from django.utils.translation import ugettext_lazy as _
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -203,3 +206,16 @@ DATABASES = {
 OSCAR_REQUIRED_ADDRESS_FIELDS=('first_name', 'last_name', 'line1','phone_number')
 
 OSCAR_SHOP_NAME = 'NextGen'
+
+OSCAR_DASHBOARD_NAVIGATION += [
+    {
+        'label': _('Slider'),
+        'children': [
+            {
+                'label': _('Add Sliders'),
+                'url_name': 'store:addslider',
+            },
+         ]
+
+    },
+]

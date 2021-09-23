@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.apps import apps
 
+#from Store.views import addslider
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -25,7 +26,7 @@ urlpatterns = [
     # Nonetheless, it's often useful for debugging.
 
     path('admin/', admin.site.urls),
-    #path('Store/', apps.get_app_config('store').urls),
-
+    path('Store/', apps.get_app_config('Store').urls),
+#    path('Slider/',)
     path('', include(apps.get_app_config('oscar').urls[0])),
 ]

@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views import generic
 from oscar.core.loading import get_model
 
+from .models import Slider
+
 Store = get_model('Store', 'Store')
 
 class StoreListView(generic.ListView):
@@ -15,3 +17,6 @@ class StoreDetailView(generic.DetailView):
     model = Store
     template_name = 'Store/Store_details.html'
     context_object_name = 'store'
+
+
+
