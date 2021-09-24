@@ -208,19 +208,6 @@ OSCAR_REQUIRED_ADDRESS_FIELDS=('first_name', 'last_name', 'line1','phone_number'
 
 OSCAR_SHOP_NAME = 'NextGen'
 
-OSCAR_DASHBOARD_NAVIGATION += [
-    {
-        'label': _('Slider'),
-        'children': [
-            {
-                'label': _('Add Sliders'),
-                'url_name': 'store:addslider',
-            },
-         ]
-
-    },
-]
-
 TEMPLATES[0]['OPTIONS']['context_processors'].append("Store.context_processors.slider_processor")
 
 
