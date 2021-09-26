@@ -209,7 +209,26 @@ OSCAR_REQUIRED_ADDRESS_FIELDS=('first_name', 'last_name', 'line1','phone_number'
 OSCAR_SHOP_NAME = 'NextGen'
 
 TEMPLATES[0]['OPTIONS']['context_processors'].append("Store.context_processors.slider_processor")
+# TEMPLATES[0]['OPTIONS']['context_processors'].append("Store.context_processors.logo_processor")
 
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+OSCAR_INITIAL_ORDER_STATUS = 'Pending'
+OSCAR_INITIAL_LINE_STATUS = 'Pending'
+OSCAR_ORDER_STATUS_PIPELINE = {
+    'Complete':('Pending','On Route','Being processed'),
+    'On Route':('Complete','Pending','Being processed'),
+    'Pending': ('Being processed', 'Cancelled','Complete','On Route'),
+    'Being processed': ('Processed', 'Cancelled','Complete','On Route'),
+    'Cancelled': (),
+}
+
+OSCAR_PAYMENT_METHODS = (
+    ('cod', _('Cash on delivery')),
+
+)
+
+OSCAR_DEFAULT_CURRENCY = 'Rs.'

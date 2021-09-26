@@ -17,3 +17,8 @@ class Slider(models.Model):
     photo = models.ImageField()
     description= models.CharField(max_length=255, blank=True, null=True)
     status=models.BooleanField(default=True)
+
+
+class Logo(models.Model):
+    photo = models.ImageField()
+

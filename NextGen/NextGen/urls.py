@@ -31,6 +31,8 @@ urlpatterns = [
     path('Store/', apps.get_app_config('Store').urls),
 #    path('Slider/',)
     path('', include(apps.get_app_config('oscar').urls[0])),
+    path('pages/',include('django.contrib.flatpages.urls')),
+#    path('contactus/', views.flatpage, {'url': '/contactus/'}, name='contact'),
 
 ]
 urlpatterns += static(settings.MEDIA_URL,

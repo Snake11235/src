@@ -24,7 +24,7 @@
     </header>
 
     {# Main content of page - other layout templates may override this block #}
-    {% block content_wrapper %}
+    {% block contentwrapper %}
         <div class="container page">
             <div class="page_inner">
 
@@ -39,9 +39,7 @@
                 {% include "oscar/partials/alert_messages.html" %}
                 {% block subnavigation %}{% endblock %}
                 <div class="content">
-                    {% for x in slider %}
-                    {{ x.name }}
-                    {% endfor %}
+
                     {% block subheader %}{% endblock subheader %}
 
                     {# Div exists for AJAX updates to entire content section #}
