@@ -209,7 +209,7 @@ OSCAR_REQUIRED_ADDRESS_FIELDS=('first_name', 'last_name', 'line1','phone_number'
 OSCAR_SHOP_NAME = 'NextGen'
 
 TEMPLATES[0]['OPTIONS']['context_processors'].append("Store.context_processors.slider_processor")
-# TEMPLATES[0]['OPTIONS']['context_processors'].append("Store.context_processors.logo_processor")
+TEMPLATES[0]['OPTIONS']['context_processors'].append("Store.context_processors.logo_processor")
 
 
 
@@ -231,4 +231,4 @@ OSCAR_PAYMENT_METHODS = (
 
 )
 
-OSCAR_DEFAULT_CURRENCY = 'Rs.'
+OSCAR_DEFAULT_CURRENCY = 'Rs. '
