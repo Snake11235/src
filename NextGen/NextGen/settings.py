@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from oscar.defaults import *
 from pathlib import Path
+import django_heroku
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -230,3 +231,7 @@ OSCAR_PAYMENT_METHODS = (
 )
 
 OSCAR_DEFAULT_CURRENCY = 'Rs. '
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+
