@@ -1,1 +1,1 @@
-web: python src/NextGen/manage.py runserver 0.0.0.0:$PORT
+web: python NextGen/manage.py runserver 0.0.0.0:$PORT
