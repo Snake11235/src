@@ -6,5 +6,5 @@ def slider_processor(request):
     return {'slider': slider}
 
 def logo_processor(request):
-    logo= Logo.objects.filter()
+    logo= Logo.objects.filter()[0]
     return {'logo':logo}
