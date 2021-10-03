@@ -12,3 +12,4 @@ RUN pip install -r requirements.txt
 
 COPY ./NextGen /opt/snake11235 
 
+ENTRYPOINT [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
